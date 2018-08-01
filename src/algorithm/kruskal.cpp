@@ -1,6 +1,6 @@
 #include <algorithm> // std::sort
-#include "../ds/Graph.hpp"
-#include "../ds/UnionFind.hpp"
+#include "../ds/Graph.hpp" // weight_t, wedgelist, wedge
+#include "../ds/UnionFind.hpp" // UnionFind
 
 // @return minimum spanning tree's weight
 weight_t kruskal(int number_of_vertices, wedgelist& wel)
