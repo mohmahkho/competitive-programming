@@ -1,7 +1,7 @@
 #ifndef _MK_UNION_FIND_
 #define _MK_UNION_FIND_
 
-#include <vector>
+#include <vector> // std::vector
 
 typedef class UnionFind
 { // Heuristics : "union by rank" and "path compression"
@@ -36,6 +36,5 @@ public:
         }
     }
 } DisjointSet;
-
 
 #endif
