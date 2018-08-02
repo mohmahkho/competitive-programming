@@ -27,7 +27,3 @@ weight_t prim(wadjlist& wal)
     
     return mst;
 }
-
-int main()
-{
-}
