@@ -25,7 +25,3 @@ weight_t kruskal(int number_of_vertices, wedgelist& wel)
 
     return mst;
 }
-
-int main()
-{
-}
