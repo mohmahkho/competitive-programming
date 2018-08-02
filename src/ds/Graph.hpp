@@ -12,7 +12,7 @@ typedef std::pair<weight_t, vertex_t> wvpair;
 typedef std::pair<vertex_t, vertex_t> edge; 
 typedef std::pair<weight_t, std::pair<vertex_t, vertex_t>> wedge; 
 
-typedef std::vector<std::vector<long>> adjmatrix;
+typedef std::vector<std::vector<long>> adjmatrix; // adjmatrix mat(n, vector<long>(n));
 typedef std::vector<std::vector<vertex_t>> adjlist;
 typedef std::vector<std::vector<wvpair>> wadjlist;
 typedef std::vector<edge> edgelist;
