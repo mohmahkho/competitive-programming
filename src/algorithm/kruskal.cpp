@@ -6,8 +6,8 @@
 Weight kruskal(int number_of_vertices, WEdgeList& weighted_edge_list)
 {
     std::sort(weighted_edge_list.begin(), weighted_edge_list.end());
-    UnionFind disjoint_set(number_of_vertices); // 0 based
     
+    UnionFind disjoint_set(number_of_vertices); // 0 based
     int number_of_edges = number_of_vertices - 1;
     Weight mst = 0;
     
