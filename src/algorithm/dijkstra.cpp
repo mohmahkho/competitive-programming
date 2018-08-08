@@ -22,7 +22,8 @@ void dijkstra(Vertex source, WAdjList& adjlist, std::vector<Weight>& shortest_pa
         Vertex top_vertex = top_wv.second;
 
         if(top_weight > shortest_path[top_vertex]) continue; // lazy deletion
-
+        // now top_weight is the shortest path of top_vertex
+        
         for(WV& adj_wv : adjlist[top_vertex]) {
             Weight adj_weight = adj_wv.first;
             Vertex adj_vertex = adj_wv.second;
