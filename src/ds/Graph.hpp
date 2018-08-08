@@ -5,10 +5,11 @@
 #include <utility> // std::pair
 #include <queue> // std::priority_queue
 #include <functional> // std::greater
+#include <limits> // std::numeric_limits
 
 // All containers can be used in directed or undirected graphs
 typedef int Vertex; // change when needed
-typedef int Weight; // change when needed
+typedef long Weight; // change when needed
 
 typedef std::pair<Weight, Vertex> WV;
 typedef std::pair<Vertex, Vertex> Edge; 
@@ -25,5 +26,8 @@ typedef std::priority_queue<WV>
 MaxWVPQ; // Maximum has a higher priority
 typedef std::priority_queue<WV, std::vector<WV>, std::greater<WV>>
 MinWVPQ; // Minimum has a higher priority
+
+const Weight INF_WEIGHT = std::numeric_limits<Weight>::max() / 3; // !overflow
+const Vertex INF_VERTEX = std::numeric_limits<Vertex>::max(); // no ocerflow
 
 #endif
