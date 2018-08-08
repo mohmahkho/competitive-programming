@@ -13,7 +13,7 @@ void dijkstra(Vertex source, WAdjList& adjlist, std::vector<Weight>& shortest_pa
     shortest_path[source] = 0;
     
     MinWVPQ pq;
-    pq.push({0, source});
+    pq.push({shortest_path[source], source});
 
     while(!pq.empty())
     {
