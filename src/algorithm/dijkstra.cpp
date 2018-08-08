@@ -1,14 +1,13 @@
 #include <vector> // std::vector
-#include <limits> // std::numeric_limits
 #include <../ds/Graph.hpp> // Vertex, WAdjList, Weight, MinWVPQ, WV
 
 // Fills the shortest_path vector with respect to source
-void dijkstra(Vertex source, WAdjList& adjlist, std::vector<Weight>& shortest_path)
+void dijkstra(Vertex source, WAdjList& adjlist,
+              std::vector<Weight>& shortest_path, Vertex goal = INF_VERTEX)
 {
     shortest_path.resize(adjlist.size());
     
-    const Weight INF = std::numeric_limits<Weight>::max() / 4; // safe !overflow
-    for(Weight& weight : shortest_path) weight = INF;
+    for(Weight& weight : shortest_path) weight = INF_WEIGHT;
 
     shortest_path[source] = 0;
     
@@ -20,6 +19,8 @@ void dijkstra(Vertex source, WAdjList& adjlist, std::vector<Weight>& shortest_pa
         WV top_wv = pq.top(); pq.pop();
         Weight top_weight = top_wv.first;
         Vertex top_vertex = top_wv.second;
+        
+        if(top_vertex == goal) break; // shortest path found from source to goal
 
         if(top_weight > shortest_path[top_vertex]) continue; // lazy deletion
         // now top_weight is the shortest path of top_vertex
