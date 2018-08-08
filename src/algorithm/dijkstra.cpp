@@ -28,9 +28,9 @@ void dijkstra(Vertex source, WAdjList& adjlist, std::vector<Weight>& shortest_pa
             Vertex adj_vertex = adj_wv.second;
 
             if(shortest_path[adj_vertex] <= top_weight + adj_weight)
-                continue; // does not makes the current path shorter
+                continue; // does not makes the older path shorter
             
-            // a shorter path found
+            // a new shorter path found
             shortest_path[adj_vertex] = top_weight + adj_weight;
             pq.push({shortest_path[adj_weight], adj_vertex});
         }
