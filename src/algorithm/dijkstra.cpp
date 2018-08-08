@@ -33,7 +33,7 @@ void dijkstra(Vertex source, WAdjList& adjlist, std::vector<Weight>& shortest_pa
             
             // a new shorter path found
             shortest_path[adj_vertex] = top_weight + adj_weight;
-            pq.push({shortest_path[adj_weight], adj_vertex});
+            pq.push({shortest_path[adj_vertex], adj_vertex});
         }
     }
 }
