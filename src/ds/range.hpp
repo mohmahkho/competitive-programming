@@ -1,3 +1,6 @@
+#ifndef _MK_RANGE_
+#define _MK_RANGE_
+
 #include <vector> // std::vector
 #include <memory> // std::allocator
 #include <initializer_list> // std::initializer_list
@@ -53,3 +56,5 @@ namespace mk { namespace ds {
         range_type last()  {return _first + (range_type)base::size();}
     };
 } }
+
+#endif
