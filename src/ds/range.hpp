@@ -38,13 +38,13 @@ namespace mk { namespace ds {
             return std::vector<T>::at(i - _first);
         }
 
-        void rearrange(range_type _first, range_type _last) {
-            this->_first = _first;
-            std::vector<T>::resize(_last - _first);
+        void rearrange(range_type first, range_type last) {
+            this->_first = first;
+            std::vector<T>::resize(last - first);
         }
 
-        void set_first(range_type _first) {
-            this->_first = _first;
+        void set_first(range_type first) {
+            this->_first = first;
         }
 
         range_type first() {return _first;}
