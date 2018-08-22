@@ -4,7 +4,7 @@
 #define loop(i, a, comp, b, op) for(auto i = a; i comp b; i op)
 #define sz(x) ((int)sizeof(x))
 #define MAXIN 1000010
-#define MODER 1000000007
+#define MOD 1000000007
 #define INF 2000000000
 #define pb push_back
 #define eb emplace_back
