@@ -8,9 +8,9 @@
 #define INF 2000000000
 #define pb push_back
 #define eb emplace_back
-using ll = long long;
+using ll  = long long;
 using ull = unsigned long long;
-using ii = std::pair<int, int>;
+using ii  = std::pair<int, int>;
 using namespace std;
 
 int main()
