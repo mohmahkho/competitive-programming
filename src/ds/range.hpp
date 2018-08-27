@@ -1,5 +1,5 @@
-#ifndef _MK_RANGE_
-#define _MK_RANGE_
+#ifndef _MK_DS_RANGE_
+#define _MK_DS_RANGE_
 
 #include <vector> // std::vector
 #include <memory> // std::allocator
