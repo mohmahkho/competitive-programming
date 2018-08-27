@@ -12,6 +12,8 @@ namespace mk { namespace ds {
         typedef std::vector<vec1d, Alloc> vec2d;
         typedef typename vec1d::size_type size_type;
     public:
+        matrix() = default;
+
         matrix(size_type rows, size_type cols)
         : vec2d(rows, vec1d(cols))
         {
@@ -21,7 +23,7 @@ namespace mk { namespace ds {
         : vec2d(n, vec1d(n))
         {
         }
-        
+
         void resize(size_type rows, size_type cols) {
             vec2d::resize(rows);
             for(vec1d& row : *this) {
@@ -32,7 +34,7 @@ namespace mk { namespace ds {
         size_type rows() {
             return (*this).size();
         }
- 
+
         size_type cols() {
             return (*this).at(0).size();
         }
