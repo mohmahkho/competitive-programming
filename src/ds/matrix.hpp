@@ -2,13 +2,14 @@
 #define _MK_DS_MATRIX_
 
 #include <vector> // std::vector
+#include <memory> // std::allocator
 
 namespace mk { namespace ds {
-    template<typename T>
-    class matrix : public std::vector<std::vector<T>>
+    template< class T, class Alloc = std::allocator<T> >
+    class matrix : public std::vector<std::vector<T, Alloc>, Alloc>
     {
-        typedef std::vector<T> vec1d;
-        typedef std::vector<vec1d> vec2d;
+        typedef std::vector<T, Alloc> vec1d;
+        typedef std::vector<vec1d, Alloc> vec2d;
         typedef typename vec1d::size_type size_type;
     public:
         matrix(size_type rows, size_type cols)
