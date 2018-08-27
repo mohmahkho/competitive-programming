@@ -1,55 +1,54 @@
-#ifndef _MK_TENSOR_
-#define _MK_TENSOR_
+#ifndef _MK_DS_TENSOR_
+#define _MK_DS_TENSOR_
 
-#include <vector>
+#include <vector> // std::vector
+#include <memory> // std::allocator
 
-#ifndef _MK_TENSOR_
-#define _MK_TENSOR_
-
-#include <vector>
-
-namespace mk {
-    template<typename T>
-    struct tensor : public std::vector<std::vector<std::vector<T>>>
+namespace mk { namespace ds {
+    template< class T, class Alloc = std::allocator<T> >
+    class tensor
+    : public std::vector<std::vector<std::vector<T, Alloc>, Alloc>, Alloc>
     {
-        tensor(unsigned int dim0, unsigned int dim1, unsigned int dim2)
-        : std::vector<std::vector<std::vector<T>>>(dim0,
-                       std::vector<std::vector<T>>(dim1,
-                                    std::vector<T>(dim2)))
+        typedef std::vector<T, Alloc> vec1d;
+        typedef std::vector<vec1d, Alloc> vec2d;
+        typedef std::vector<vec2d, Alloc> vec3d;
+        typedef typename vec1d::size_type size_type;
+    public:
+        tensor() = default;
+
+        tensor(size_type layers, size_type rows, size_type cols)
+        : vec3d(layers, vec2d(rows, vec1d(cols)))
         {
         }
 
-        tensor(unsigned int dim_size)
-        : std::vector<std::vector<std::vector<T>>>(dim_size,
-                       std::vector<std::vector<T>>(dim_size,
-                                    std::vector<T>(dim_size)))
+        tensor(size_type n)
+        : vec3d(n, vec2d(n, vec1d(n)))
         {
         }
-        
-        void resize(unsigned int dim0, unsigned int dim1, unsigned int dim2) {
-            std::vector<std::vector<std::vector<T>>>::resize(dim0);
-            for(std::vector<std::vector<T>>& mat_vector : *this) {
-                mat_vector.resize(dim1);
-                for(std::vector<T>& row_vector : mat_vector) {
-                    row_vector.resize(dim2);
+
+        void resize(size_type layers, size_type rows, size_type cols) {
+            vec3d::resize(layers);
+            for(vec2d& layer : *this) {
+                layer.resize(rows);
+                for(vec1d& row : layer) {
+                    row.resize(cols);
                 }
             }
         }
 
-        typename std::vector<std::vector<std::vector<T>>>::size_type
-        dim0_size() {
+        size_type layers() {
             return (*this).size();
         }
-        typename std::vector<std::vector<T>>::size_type
-        dim1_size() {
+
+        size_type rows() {
             return (*this).at(0).size();
         }
-        typename std::vector<T>::size_type
-        dim2_size() {
+
+        size_type cols() {
             return (*this).at(0).at(0).size();
         }
 
     };
-}
+} }
 
 #endif
