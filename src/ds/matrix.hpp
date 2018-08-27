@@ -32,6 +32,7 @@ namespace mk { namespace ds {
         size_type rows() {
             return (*this).size();
         }
+ 
         size_type cols() {
             return (*this).at(0).size();
         }
