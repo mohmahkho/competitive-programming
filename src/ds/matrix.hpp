@@ -1,7 +1,7 @@
 #ifndef _MK_DS_MATRIX_
 #define _MK_DS_MATRIX_
 
-#include <vector>
+#include <vector> // std::vector
 
 namespace mk { namespace ds {
     template<typename T>
