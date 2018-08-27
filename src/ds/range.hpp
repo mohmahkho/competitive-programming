@@ -12,6 +12,8 @@ namespace mk { namespace ds {
         typedef std::vector<T, Alloc> base;
         typedef int range_type;
         typedef typename base::size_type size_type;
+        typedef typename base::value_type value_type;
+        typedef value_type& reference;
         
         range_type _first; // last = first + size() // [first, last)
     public:
@@ -19,7 +21,7 @@ namespace mk { namespace ds {
         : base(), _first(0)
         {
         }
-        
+
         range(range_type first, range_type last)
         : base(last - first), _first(first)
         {
@@ -35,11 +37,11 @@ namespace mk { namespace ds {
         {
         }
 
-        T& operator[] (range_type i) {
+        reference operator[] (range_type i) {
             return base::operator[](i - _first);
         }
 
-        T& at (range_type i) {
+        reference at (range_type i) {
             return base::at(i - _first);
         }
 
@@ -55,7 +57,7 @@ namespace mk { namespace ds {
         range_type first() {
             return _first;
         }
-        
+
         range_type last() {
             return _first + (range_type)base::size();
         }
