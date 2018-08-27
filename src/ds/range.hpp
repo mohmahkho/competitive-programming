@@ -52,8 +52,13 @@ namespace mk { namespace ds {
             this->_first = first;
         }
 
-        range_type first() {return _first;}
-        range_type last()  {return _first + (range_type)base::size();}
+        range_type first() {
+            return _first;
+        }
+        
+        range_type last() {
+            return _first + (range_type)base::size();
+        }
     };
 } }
 
