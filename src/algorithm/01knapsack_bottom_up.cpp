@@ -15,7 +15,7 @@ int main()
         std::cin >> v[i] >> w[i];
     }
 
-    // bottom up approach // faster and no stack concern
+    // bottom up approach // no stack concern
     for(int j = 0; j <= W; j++) { // initializing first row of memo
         if(j >= w[0]) memo[0][j] = v[0];
     }
