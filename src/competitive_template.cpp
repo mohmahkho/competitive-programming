@@ -4,11 +4,11 @@
 #define per(i, a, comp, b)      for(auto i = a; i comp b; --i)
 #define loop(i, a, comp, b, op) for(auto i = a; i comp b; i op)
 #define repeat(t)               for(auto HDN_CTR = t; HDN_CTR > 0; --HDN_CTR)
-// c : closed // o : open // rof : backwards
+// c : closed // o : open // bac : backward // for : forward
 #define cfor(i, a, b)           for(auto i = a; i <= b; ++i)
 #define ofor(i, a, b)           for(auto i = a; i < b; ++i)
-#define crof(i, b, a)           for(auto i = b; i >= a; --i)
-#define orof(i, b, a)           for(auto i = b; i > a; --i)
+#define cbac(i, b, a)           for(auto i = b; i >= a; --i)
+#define obac(i, b, a)           for(auto i = b; i > a; --i)
 #define sz(x) ((int)sizeof(x))
 #define pb push_back
 #define eb emplace_back
@@ -34,7 +34,7 @@ constexpr int MAXINPUT = 1e5 + 10;
 using namespace std;
 
 void SOLVE_PROBLEM() {
-    
+
 }
 
 int main() {
