@@ -80,6 +80,7 @@ public:
 
     void update(size_type update_idx, value_type update_value) {
         if(update_idx >= n or update_idx < 0) return; // invalid update
+        A[update_idx] = update_value;
         update(0, 0, n - 1, update_idx, update_value);
     }
 
