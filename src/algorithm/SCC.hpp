@@ -52,10 +52,9 @@ public:
         on_stck.assign(adjlist.size(), false);
     }
 
-    void find_scc() {
-        int min_vertex = 0, max_vertex = (int)adjlist.size() - 1;
-        // 0 based vertices
-        for(int i = min_vertex; i <= max_vertex; ++i) {
+    void find_scc(int min_vertex_idx, int max_vertex_idx) {
+        // for example find_scc(1, N) or find_scc(0, N-1)
+        for(int i = min_vertex_idx; i <= max_vertex_idx; ++i) {
             if(dfs_num[i] == UNVISITED)
                 dfs(i);
         }
