@@ -1,3 +1,4 @@
+// @return iterator to the first occurrence of val. if not found returns last.
 template <class ForwardIterator, class T>
 ForwardIterator first_occurrence(ForwardIterator first, ForwardIterator last,
                                  const T& val)
@@ -9,7 +10,7 @@ ForwardIterator first_occurrence(ForwardIterator first, ForwardIterator last,
     return it;
 }
 
-
+// @return iterator to the last occurrence of val. if not found returns last.
 template <class ForwardIterator, class T>
 ForwardIterator last_occurrence(ForwardIterator first, ForwardIterator last,
                                 const T& val)
