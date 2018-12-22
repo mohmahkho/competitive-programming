@@ -1,38 +1,43 @@
-#ifndef _MK_DS_RANGE_
-#define _MK_DS_RANGE_
+#ifndef MK_RANGE_VECTOR
+#define MK_RANGE_VECTOR
 
 #include <vector> // std::vector
 #include <memory> // std::allocator
 #include <initializer_list> // std::initializer_list
 
-namespace mk { namespace ds {
+namespace mk {
     template < class T, class Alloc = std::allocator<T> >
-    class range : public std::vector<T, Alloc>
+    class RangeVector : public std::vector<T, Alloc>
     {
-        typedef std::vector<T, Alloc> base;
-        typedef int range_type;
-        typedef typename base::size_type size_type;
-        typedef typename base::value_type value_type;
-        typedef value_type& reference;
+        using base       = std::vector<T, Alloc>;
+        using range_type = int;
+        using size_type  = typename base::size_type;
+        using value_type = typename base::value_type;
+        using reference  = value_type&;
         
         range_type _first; // last = first + size() // [first, last)
     public:
-        range()
+        RangeVector()
         : base(), _first(0)
         {
         }
 
-        range(range_type first, range_type last)
+        RangeVector(range_type first, range_type last)
         : base(last - first), _first(first)
         {
         }
 
-        range(size_type n)
+        RangeVector(range_type first, range_type last, const value_type& value)
+        : base(last - first, value), _first(first)
+        {
+        }
+
+        RangeVector(size_type n)
         : base(n), _first(0)
         {
         }
 
-        range(std::initializer_list<T> il, range_type first = 0)
+        RangeVector(std::initializer_list<T> il, range_type first = 0)
         : base(il), _first(first)
         {
         }
@@ -62,6 +67,6 @@ namespace mk { namespace ds {
             return _first + (range_type)base::size();
         }
     };
-} }
+}
 
 #endif
