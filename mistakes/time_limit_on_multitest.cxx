@@ -32,7 +32,7 @@ while(tc--)
 }
 /*
     or even worse. if we have defined visited array as an std::array so the process of
-    filling the array would be easy, seeing the problem would be much harder.
+    filling the array would be easy, it would be much harder to detect the problem.
 */
 std::array<int, MAXN> visited;
 int tc;
