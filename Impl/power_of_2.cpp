@@ -1,6 +1,6 @@
 /*
 If you need some powers of 2 (or some constant) you can just pre calculate it
-Typically because of overflow powers are needed in some mod.
+Typically because of overflow we need to take mod.
 */
 
 int constexpr MOD = 1000000007;
