@@ -1,4 +1,4 @@
-// Count the number of numbers between 0..n inclusive that have remainder r int modula m
+// Count the number of numbers between 0..n inclusive that have remainder r modula m
 inline int cntrem(int n, int m, int r) {
     assert(0 <= r && r < m);
     return (r <= n % m) ? (n / m + 1) : (n / m);
