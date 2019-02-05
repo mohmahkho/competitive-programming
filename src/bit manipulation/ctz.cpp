@@ -23,3 +23,4 @@ int ctz(Int n) {
 }
 
 // on int : __builtin_ctz(0) = 0, ctz(0) = 32
+// if n is a power of 2 then ctz(n) will return lg(n) (logarithm base 2 of n)
