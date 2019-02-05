@@ -21,3 +21,5 @@ int ctz(Int n) {
     }
     return tz;
 }
+
+// on int : __builtin_ctz(0) = 0, ctz(0) = 0
