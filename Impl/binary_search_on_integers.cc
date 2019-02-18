@@ -5,10 +5,11 @@ find minimum x in segment [a, b] that f(x) is true
 if f(x) is not true for any integer in this segment print -1.
 */
 
+assert(b >= a);
+
 int lb = a, ub = b;
-int mid;
 while(lb != ub) {
-    mid = (lb + ub) / 2;
+    int mid = (lb + ub) / 2;
     if( f(mid) ) {
         ub = mid;
     } else {
@@ -16,7 +17,7 @@ while(lb != ub) {
     }
 }
 
-if(f(ub)) {
+if( f(ub) ) {
     cout << ub << endl;
 } else {
     cout << -1 << endl;
