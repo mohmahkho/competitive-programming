@@ -1,40 +1,24 @@
-#ifndef _MK_UNION_FIND_
-#define _MK_UNION_FIND_
-
-#include <vector> // std::vector
-
-typedef class UnionFind
-{ // Heuristics : "union by rank" and "path compression"
-private:
-    std::vector<int> parent, rank;
+class UnionFind {
+    vector<int> p, rank;
 public:
     UnionFind(int N) {
-        // N represents nodes where nodes start from 0 to N-1
-        parent.assign(N, 0);
+        p.assign(N, 0);
         rank.assign(N, 0);
-        for(int i = 0; i < N; i++) parent[i] = i;
+        for(int i = 0; i < N; ++i) p[i] = i;
     }
-
-    int find_set(int i) {
-        if(parent[i] == i) return i;
-        return parent[i] = find_set(parent[i]); // path compression
+    int find_set(int v) {
+        return p[v] == v ? v : p[v] = find_set(p[v]); // path compression
     }
-
-    bool in_same_set(int i, int j) {
-        return find_set(i) == find_set(j);
+    bool in_same_set(int u, int v) {
+        return find_set(u) == find_set(v);
     }
-
-    void union_set(int i, int j) {
-        if(in_same_set(i, j) == true) return;
-        int i_set = find_set(i), j_set = find_set(j);
-
-        // union by rank
-        if(rank[i_set] < rank[j_set]) parent[j_set] = i_set;
+    void unite(int u, int v) {
+        if(in_same_set(u, v)) return ;
+        u = find_set(u); v = find_set(v);
+        if(rank[u] > rank[v]) p[v] = u; // union by rank
         else {
-            parent[i_set] = j_set;
-            if(rank[i_set] == rank[j_set]) rank[j_set]++;
+            p[u] = v;
+            if(rank[u] == rank[v]) ++rank[v];
         }
     }
-} DisjointSet;
-
-#endif
+};
