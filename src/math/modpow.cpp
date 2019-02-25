@@ -6,7 +6,7 @@ int mod(int n) {
 
 int modpow(int a, int b) {
     if (b == 0) return 1;
-    int t = fp(a, b / 2);
+    int t = modpow(a, b / 2);
     if (b % 2 == 0) return mod(t * t);
     else return mod(mod(t * t) * a);
 }
