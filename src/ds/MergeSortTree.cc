@@ -75,11 +75,11 @@ left child is first half of the array but sorted and right child is second half 
                                    /            \
                                   /              \
                              1, 2, 3, 3      1, 4, 5, 5
-                              ...               ...
+                                ...              ...
                               
 
 we can use this structure to answer the queries like : "how many numbers are less than 3 in the range of 3, 8"
-in O(lg(n)*lg(n))
+in O(lg(n)*lg(n)) using the method that we use to answer queries in segment tree.
 
 the space complexity of this data structure is O(n * lg(n))
 because merge sort tree has lg(n) layers and at each layer we have the whole array. 
