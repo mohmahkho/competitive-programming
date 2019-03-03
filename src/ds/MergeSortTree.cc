@@ -50,6 +50,8 @@ class MergeSortTree {
 public:
     MergeSortTree(vector<int>& A, int idx_begin, int idx_end)
     : A(A), idx_begin(idx_begin), idx_end(idx_end) {
+        // create tree from idx_begin to idx_end in the array A
+        // in other words create merge sort tree of this part of array
         assert(A.size() > 0);
         tree.resize(2);
         build(1, idx_begin, idx_end); // building 1 based tree
