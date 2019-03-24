@@ -29,9 +29,9 @@ public:
     void update(int l, int r, int val) {
         add(l, val);
         add(r + 1, -val);
-    }
+    } // O(2 * lgn)
 
     int get(int i) {
         return sum(i);
-    }
+    } // O(lgn)
 };
