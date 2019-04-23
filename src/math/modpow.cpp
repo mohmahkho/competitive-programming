@@ -1,12 +1,17 @@
-const int MOD = 1000 * 1000 * 1000 + 7;
+using ll = long long;
+ll const MOD = 1'000'000'000 + 7;
 
-int mod(long long x) {
-    return (x % MOD + MOD) % MOD;
+ll mod(ll x) {
+    return x < 0 ? x % MOD + MOD : x % MOD;
 }
 
-int modpow(int a, int b) {
-    if (b == 0) return 1;
-    int t = modpow(a, b / 2);
-    if (b % 2 == 0) return mod(1LL * t * t);
-    else return mod(1LL * mod(1LL * t * t) * a);
+ll mpow(ll base, ll exp) {
+    base = mod(base);
+    ll res = 1;
+    while(exp > 0) {
+        if(exp & 1) res = mod(res * base);
+        base = mod(base * base);
+        exp >>= 1;
+    }
+    return res;
 }
