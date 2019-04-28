@@ -17,10 +17,8 @@ so this formula can be written as :
 */
 sum = a * (1 - mpow(q, m)) * inverse(1 - q);
 /*
-as you may know inverse of an integer modula a large prime is usually calculated as
-mpow(x, MOD - 2).
-the bad thing about mpow is that usually the answer is at least 1!
-which means for the x = 0 it will return 1!!
-the worst thing is that inverse of (1 - q) becomes 1 and you even don't get a 
-runtime error verdict! you get WRONG ANSWER!! which makes it even harder to spot the error!
+in the normal case (1 - mpow(q, m)) / (1 - q) will be 0 / 0 and a RUNTIME ERROR verdict
+will be shown. but when you are calculating it in inverse mod its not a division
+it's a multiplication. hence you get a WRONG ANSWER verdict which makes it even harder to
+spot the error.
 */
