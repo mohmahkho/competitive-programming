@@ -6,4 +6,4 @@ but we need to consider that this formula only works for q != 1
 this is a corner case and should be handled :
 */
 if(q != 1) sum = a * (1 - pow(q, m)) / (1 - q);
-else       sum = a * m;
+if(q == 1) sum = a * m;
