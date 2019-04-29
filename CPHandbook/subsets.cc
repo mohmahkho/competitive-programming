@@ -24,12 +24,12 @@ void search(int k) {
 // similarly a string of 0s and 1s with lenght n identifies one of the subsets of a
 // set with n elements in it where if the bit at position i is 1 means that object at
 // position i is in the subset and if the bit is 0 means that object is not in the subset.
-// so we can implement subsets in non-recursive fashion :
+// so we can implement subsets in a non-recursive fashion :
 
 int n;
 for(int subset = 0; subset < (1 << n); ++subset) {
     // subset in binary represents a subset of {0, 1, ..., n - 1}.
     for(int i = 0; i < n; ++i) {
-        if((1 << i) & subset) { /* i is in the subset */ }
+        if((1 << i) & subset) { /* element at position i is in the subset */ }
     }
 }
