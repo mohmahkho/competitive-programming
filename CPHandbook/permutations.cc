@@ -49,3 +49,17 @@ because this is done in a recursive fashion the next first element (here the sec
 will be chosen recursively in this manner.
 until we reach a point that our permutation has n elements in it. we can make sure this is a permutation.
 */
+
+/*
+C++ standard library contains a next_permutation function that generates 
+the next lexicographically bigger permutation.
+*/
+
+int n;
+vector<int> p;
+cin >> n;
+for(int i = 1; i <= n; ++i) p.push_back(i);
+
+do {
+    // p contains permutation of 1 .. n
+} while(next_permutation(begin(v), end(v)));
