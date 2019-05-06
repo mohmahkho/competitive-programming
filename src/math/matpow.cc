@@ -31,6 +31,6 @@ Matrix matpow(Matrix& base, int n, int exp) {
 }
 
 /*
-matpow return takes a 1-based n * n matrix and return the expth power of that
+matpow takes a 1-based n * n matrix and return the expth power matrix of that
 in modula MOD with time complexity of O(n^3 * log(exp))
 */
