@@ -18,7 +18,7 @@ Matrix mul(Matrix& a, Matrix& b, int n) {
     return c;
 }
 
-Matrix matpow(Matrix& base, int n, int exp) {
+Matrix matpow(Matrix base, int n, int exp) {
     // m is a n * n matrix
     Matrix res = Matrix(n + 1, n + 1);
     for(int i = 1; i <= n; ++i) res[i][i] = 1;
