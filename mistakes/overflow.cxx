@@ -18,7 +18,7 @@ for(int i = 0; i < (int)vec.size() - 2; i++) {
 
 // =======================================================================
 /*
-once I was trying to fide vertex with maximul degree in a graph and
+once I was trying to find vertex with maximul degree in a graph and
 I wrote the code below:
 */
 int max_deg = -1;
