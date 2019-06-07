@@ -22,3 +22,20 @@ int main() {
     int n = 3;
     parentheses(n, n);
 }
+
+
+/*
+the catalan number itself:
+There is a recursive formula for n'th catalan number.
+C(n) = (4n - 2) C(n - 1) / (n + 1)
+*/
+int cat[N];
+
+int main() {
+    int n;
+    cin >> n;
+
+    cat[0] = 1;
+    for(int i = 1; i <= n; ++i) cat[i] = (4 * i - 2) * cat[i - 1] / (i + 1);
+    cout << cat[n] << endl;
+}
