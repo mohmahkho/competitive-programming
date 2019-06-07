@@ -2,6 +2,7 @@
 the code below generates all well-formed parentheses.
 the fact that all well-formed parentheses of lenght 2n equals the Cn
 where Cn is the n'th catalan number makes this DP approach O(Cn) time.
+considering this, parentheses(n, n).size() equals to the Cn.
 */
 
 int constexpr N = 100;
@@ -15,4 +16,9 @@ vector<string> parentheses(int r, int c) {
     for(string& s : parentheses(r - 1, c)) ans.push_back(s + ')');
     for(string& s : parentheses(r, c - 1)) ans.push_back(s + '(');
     return ans;
+}
+
+int main() {
+    int n = 3;
+    parentheses(n, n);
 }
