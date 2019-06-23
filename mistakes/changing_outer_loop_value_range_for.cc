@@ -30,3 +30,5 @@ for(int uu : A) {
     u = max(u, v);
   }
 }
+
+// it was quite obvious! but I made this mistake and it took a lot of time to debug! :)
