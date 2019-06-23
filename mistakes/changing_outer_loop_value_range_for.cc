@@ -21,3 +21,12 @@ for(int u : A) {
   }
 }
 // this will change u in the next iterations of the for(v:B)
+
+// Solution
+for(int uu : A) {
+  for(int vv : B) {
+    int u = uu;
+    int v = vv;
+    u = max(u, v);
+  }
+}
