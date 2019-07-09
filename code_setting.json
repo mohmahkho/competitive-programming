@@ -1,5 +1,5 @@
 {
-    "window.zoomLevel": 0,
+    "window.zoomLevel": 1,
     "editor.renderWhitespace": "none",
     "editor.renderControlCharacters": false,
     "breadcrumbs.enabled": false,
@@ -11,9 +11,9 @@
     "terminal.integrated.rendererType": "dom",
     "workbench.activityBar.visible": false,
     // Turn off autocomplete in Visual Studio Code
-// http://code.visualstudio.com/
+    // http://code.visualstudio.com/
 
-// Add the following lines to user settings
+    // Add the following lines to user settings
 
     // OPTIONAL WORD WRAPPING
     // Controls if lines should wrap. The lines will wrap at min(editor.wrappingColumn, viewportWidthInColumns).
@@ -40,5 +40,7 @@
     // Controls if suggestions should be accepted 'Enter' - in addition to 'Tab'. Helps to avoid ambiguity between inserting new lines or accepting suggestions.
     "editor.acceptSuggestionOnEnter": false,
     "editor.folding" : false,
-    "editor.glyphMargin" : false,
+    "editor.glyphMargin": false,
+    "editor.fontSize": 15,
+    "editor.minimap.enabled": false,
 }
