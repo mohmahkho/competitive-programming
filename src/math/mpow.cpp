@@ -1,17 +1,21 @@
-using ll = long long;
-ll const MOD = 1'000'000'000 + 7;
+int MOD = 1e9 + 7;
 
-ll mod(ll x) {
-    return x < 0 ? x % MOD + MOD : x % MOD;
+// Non-Rec
+int mpow(int a, int b) {
+    int ans = 1;
+    do {
+        if(b & 1)
+            ans = 1ll * ans * a % MOD;
+        a = 1ll * a * a % MOD;
+    } while(b >>= 1);
+    return ans;
 }
 
-ll mpow(ll base, ll exp) {
-    base = mod(base);
-    ll res = 1;
-    while(exp > 0) {
-        if(exp & 1) res = mod(res * base);
-        base = mod(base * base);
-        exp >>= 1;
-    }
-    return res;
+// Rec
+int mpow(int a, int b) {
+    if(!b) return 1;
+    int ans = mpow(a, b >> 1);
+    ans = 1ll * ans * ans % MOD;
+    if(b & 1) ans = 1ll * ans * a % MOD;
+    return ans;
 }
