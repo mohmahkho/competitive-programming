@@ -8,7 +8,7 @@ struct dsu {
     int find(int u) {
         return u == p[u] ? u : p[u] = find(p[u]);
     }
-    int unite(int u, int v) {
+    void unite(int u, int v) {
         u = find(u), v = find(v);
         p[u] = v;
     }
