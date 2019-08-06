@@ -1,9 +1,8 @@
 class Hash {
-public:
   string & s;
   int n, B, M;
   vector<int> bi, h;
-
+public:
   Hash(string & _s, int _B, int _M) : s(_s), B(_B), M(_M) {
     n = (int) s.size();
     bi.resize(n);
