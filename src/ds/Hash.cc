@@ -1,3 +1,12 @@
+int mpow(int a, int b, int m) {
+  int res = 1;
+  do {
+    if(b & 1) res = 1ll * res * a % m;
+    a = 1ll * a * a % m;
+  } while(b >>= 1);
+  return res;
+}
+ 
 class Hash {
   string & s;
   int n, B, M;
@@ -14,11 +23,11 @@ public:
     h.assign(n, 0);
     for(int i = 0, p = 1; i < n; ++i, p = 1ll * p * B % M) {
       if(i) h[i] = h[i - 1];
-      h[i] += 1ll * (s[i] - 'a') * p % M;
+      h[i] += 1ll * (s[i] - ' ') * p % M;
       if(h[i] >= M) h[i] -= M;
     }
   }
-
+ 
   int hash(int i, int j) {
     int ans = h[j];
     if(i) {
