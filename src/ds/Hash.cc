@@ -38,3 +38,16 @@ public:
     return ans;
   }
 };
+
+class DoubleHash {
+  Hash h1, h2;
+public:
+  DoubleHash(string s, int b1, int m1, int b2, int m2) :
+    h1(s, b1, m1), h2(s, b2, m2)
+  {
+  }
+ 
+  pair<int, int> hash(int i, int j) {
+    return {h1.hash(i, j), h2.hash(i, j)};
+  }
+};
