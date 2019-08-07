@@ -23,7 +23,7 @@ public:
     h.assign(n, 0);
     for(int i = 0, p = 1; i < n; ++i, p = 1ll * p * B % M) {
       if(i) h[i] = h[i - 1];
-      h[i] += 1ll * (s[i] - ' ') * p % M;
+      h[i] += 1ll * (s[i] - 'a') * p % M;
       if(h[i] >= M) h[i] -= M;
     }
   }
