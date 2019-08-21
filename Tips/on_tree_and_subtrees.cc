@@ -6,4 +6,7 @@ by doing this, working with tree would be simpler but we need to be careful abou
 also this method makes it easier to use dynamic programming on these types of problems.
 for example our dp state would be something like dp(u, k) and this means some value for
 subtree rooted at u with some extra state like k.
+
+If you have rooted a tree then running a dfs on that tree and saving the time where you enter and exit a
+node and will help you to make each subtree (in this rooted tree) a segment in an array!
 */
