@@ -5,8 +5,8 @@ int num[N], low[N], vis[N];
 stack<int> st;
  
 void dfs(int u) {
-    static int dn = 1;
-    num[u] = low[u] = dn++;
+    static int dn = 0;
+    num[u] = low[u] = ++dn;
     vis[u] = 1;
     st.push(u);
     
