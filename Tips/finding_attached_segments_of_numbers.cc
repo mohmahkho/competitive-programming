@@ -27,7 +27,7 @@ array like [1, 1, 10, 10, 4, 4] has three segments as well.
         st = ed + 1;
     }
     
-// approach 2 : using stack
+// approach 2 : using stack O(n)
     cin >> n;
     for(int i = 1; i <= n; ++i) {
         cin >> a[i];
