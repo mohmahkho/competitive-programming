@@ -1,2 +1,2 @@
-# Algorithms and Data Structures
-Algorithms and data structures
+# Competitve Programming Library
+Algorithms and competitvie programming are inseparable. In this repository I tried to maintain library of algorithms and data structures that are regularly used in competitive programming. I use C++ for competing, thus almost every code here is in C++. I tried to keep codes as simple as possible and make sure that they work properly. Some tips are included. Some mistakes that I made during solving problems are included (this is a personal list).
