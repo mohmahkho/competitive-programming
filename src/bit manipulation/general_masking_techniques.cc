@@ -1,5 +1,6 @@
 /** Assignment **/
 int mask = 0b0110011; // base 2 assignment
+int mask = 030; // base 8 assignment
 int mask = 0xFA6; // base 16 assignment
 int mask = 373492; // base 10 assignment
 
