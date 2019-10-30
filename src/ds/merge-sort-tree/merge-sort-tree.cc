@@ -35,6 +35,7 @@ public:
         build(1, from, to);
     }
 
+    // returns number of numbers less than or equal to x in a[ql:qr]
     int leq(int ql, int qr, int x) {
         return leq(1, from, to, ql, qr, x);
     }
