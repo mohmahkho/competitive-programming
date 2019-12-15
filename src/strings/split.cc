@@ -1,6 +1,3 @@
-#include <bits/stdc++.h>
-using namespace std;
-
 vector<string> split(string& s, char sep) {
   vector<string> res;
   string t {};
@@ -18,14 +15,4 @@ vector<string> split(string& s, char sep) {
     res.push_back(t);
   }
   return res;
-}
-
-int main() {
-  ios::sync_with_stdio(0); cin.tie(0);
-  string s;
-  char c;
-  cin >> s >> c;
-  for(auto x : split(s, c)) {
-    cout << x << endl;
-  }
 }
