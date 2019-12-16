@@ -1,3 +1,4 @@
+// Compile with C++17 Standard
 pair<vector<long long>, vector<int>> dijdad(int s) {
   vector<long long> dist(N, INF);
   vector<int> dad(N, -1);
