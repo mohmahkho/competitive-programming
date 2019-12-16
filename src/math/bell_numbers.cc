@@ -1,3 +1,4 @@
+/* Bell number b[n] is the number of partitions of set of size n */
 int constexpr N = 5009;
 vector<int> s(N); // holds stirling numbers of second type
 vector<int> b(N); // holds bell numbers
