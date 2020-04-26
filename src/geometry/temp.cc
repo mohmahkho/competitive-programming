@@ -1,8 +1,9 @@
+constexpr double eps = 1e-8;
+constexpr double pi = atan(1) * 4;
 
 template<typename T> struct Circle;
 template<typename T> struct Line;
 // --------------------------------
-constexpr double eps = 1e-8;
 template<typename T>
 bool eq(const T& lhs, const T& rhs) {
   return lhs == rhs;
@@ -43,6 +44,10 @@ struct Pt {
   Pt operator+() const { return *this; }
   template<typename U>
   Pt operator*(U r) const { return {r * x, r * y}; }
+
+  template<typename U>
+  Pt operator/(U r) const { return {x / r, y / r}; }
+
   template<typename U, typename V>
   friend Pt operator*(V r, const Pt<U>& p) { return p * r; }
   template<typename U>
@@ -54,6 +59,19 @@ struct Pt {
   norm() const {
     using R = typename common_type<T, long long>::type;
     return (R) x * x + (R) y * y;
+  }
+  double length() const {
+    return sqrt(norm());
+  }
+  double ang() {
+    auto a = atan2(y, x);
+    if(a < 0) {
+      a += 2 * pi;
+    }
+    return a;
+  }
+  double ang_dg() {
+    return ang() * 180.0 / pi;
   }
 };
 // --------------------------------
@@ -146,5 +164,9 @@ struct Circle {
                    2 * (other.center.y - center.y),
                    center.norm() - other.center.norm() - r * r + other.r * other.r)
            .intersect(*this);
+  }
+  vector<Pt<T>> tangent_points(const Pt<T>& p) {
+    auto q = (p + center) / 2;
+    return intersect(Circle{ q.x, q.y, sqrt((p - q).norm()) });
   }
 };
