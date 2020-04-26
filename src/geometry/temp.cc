@@ -167,6 +167,13 @@ struct Circle {
   }
   vector<Pt<T>> tangent_points(const Pt<T>& p) {
     auto q = (p + center) / 2;
-    return intersect(Circle{ q.x, q.y, sqrt((p - q).norm()) });
+    return intersect(Circle{ q.x, q.y, (p - q).length() });
+  }
+  T position(const Pt<T>& p) {
+    /* < 0 : p is inside the circle
+     * == 0: p is on the circle
+     * > 0 : p is outside the circle
+     */
+    return (p - center).norm() - r * r;
   }
 };
