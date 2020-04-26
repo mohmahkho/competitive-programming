@@ -9,7 +9,7 @@ T segulen(const vector<pair<T, T>>& a) {
   sort(ends.begin(), ends.end());
   T ulen = 0;
   for(int i = 0, c = 0; i < (n << 1); ++i) {
-    ulen += (c > 0) * (ends[i].first - ends[i - 1].first);
+    if(i) ulen += (c > 0) * (ends[i].first - ends[i - 1].first);
     c -= ends[i].second; 
   }
   return ulen;
