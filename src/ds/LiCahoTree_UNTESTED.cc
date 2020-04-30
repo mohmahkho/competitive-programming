@@ -1,7 +1,3 @@
-#include <bits/stdc++.h>
-#define dump(x) cout << #x << " : " << x << endl
-using namespace std;
-
 template<typename T>
 struct LineFunction {
   /* y = mx + b */
@@ -52,21 +48,3 @@ public:
     return query(x, 1, min_x, max_x);
   }
 };
-
-int main() {
-  ios::sync_with_stdio(0); cin.tie(0);
-  LiChaoTree<long long> lc(-100, 100);
-  while(true) {
-    int type;
-    cin >> type;
-    if(type == 1) {
-      int m, b;
-      cin >> m >> b;
-      lc.insert(LineFunction<long long>(m, b), 1, -100, 100);
-    } else {
-      int x;
-      cin >> x;
-      cout << lc.query(x, 1, -100, 100) << endl;
-    }
-  }
-}
