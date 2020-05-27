@@ -2,7 +2,7 @@ int discrete_log(int a, int b, int m) {
   /* finds all 0 <= x < m 
    * a ^ x == b (mod m)
    * assumption : gcd(a, m) = 1
-   * return only one instance
+   * returns only one instance
    */
   int n = sqrt(m) + 1;
   unordered_map<int, vector<int>> arcg;
