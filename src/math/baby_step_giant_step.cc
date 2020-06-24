@@ -5,33 +5,39 @@
  * time complexity : O(sqrt(m) + log^2(m))
  * stress tested : check
 */
+
+// [Baby-step Giant-step] Smallest integer x such that a^x = b (mod m)
 int discrete_log(int a, int b, int m) {
-  int cnt = 0;
-  int coprime = 1;
+  a %= m; b %= m;
+  if(b == 1) {
+    return 0;
+  }
+  int cnt = 0, coprime = 1;
   for(int g = gcd(a, m); g != 1; g = gcd(a, m)) {
     if(b % g) {
       return -1;
     }
-    m /= g;
-    b /= g;
-    coprime = 1LL * coprime * a / g % m;
+    m /= g; b /= g;
+    coprime = 1ll * coprime * a / g % m;
     cnt += 1;
     if(coprime == b) {
       return cnt;
     }
   }
-  int n = sqrt((double) m) + 1;
-  int an = 1;
-  unordered_map<int, int> idx;
-  for(int q = 0; q < n; ++q) {
-    idx[1LL * an * b % m] = q;
-    an = 1LL * an * a % m;
+  int n = (int)sqrt((double)m) + 1;
+  // a^np = b * a^q (mod m)
+  unordered_map<int, int> q_of;
+  int right = b, an = 1;
+  for(int q = 0; q <= n; ++q) {
+    q_of[right] = q;
+    right = 1ll * right * a % m;
+    if(q) an = 1ll * an * a % m;
   }
-  for(int p = 1, f = 1LL * coprime * an % m; p <= (m + n - 1) / n; ++p) {
-    if(idx.count(f)) {
-      return p * n - idx[f] + cnt;
+  for(int p = 1, left = 1ll * coprime * an % m; p * n < m + n; ++p) {
+    if(q_of.count(left)) {
+      return n * p - q_of[left] + cnt;
     }
-    f = 1LL * f * an % m;
+    left = 1ll * left * an % m;
   }
   return -1;
 }
