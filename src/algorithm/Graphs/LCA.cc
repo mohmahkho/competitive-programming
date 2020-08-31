@@ -1,55 +1,64 @@
 struct LCA {
-  const int n, lgn;
-  vector<vector<int>> g, par;
-  vector<int> lev;
-  LCA(int n_, vector<pair<int, int>>& edges) : n(n_), lgn(32 - __builtin_clz(n_)) {
-    assert(n > 0 && edges.size() == n - 1);
-    g.assign(n, {});
-    par.assign(lgn, vector(n, 0));
-    lev.assign(n, 0);
+  int n;
+  int lgn;
+  int root = 0;
+  vector<vector<int>> g;
+  vector<vector<int>> par;
+  vector<int> depth;
+
+  LCA(int n_, const vector<pair<int, int>>& edges, int root_ = 0)
+    : n(n_)
+    , lgn(32 - __builtin_clz(n))
+    , root(root_)
+    , g(n)
+    , par(lgn, vector<int>(n, -1))
+    , depth(n)
+  {
+    assert(n > 0 && (int) edges.size() == n - 1);
     for(auto [u, v] : edges) {
       g[u].push_back(v);
       g[v].push_back(u);
     }
-    function<void(int, int)> dfs = [&](int u, int p) {
-      par[0][u] = p;
-      lev[u] = lev[p] + (u != p);
-      for(int v : g[u]) {
-        if(v != p) {
-          dfs(v, u);
-        }
-      }
-    };
-    dfs(0, 0);
-    for(int i = 1; i < lgn; ++i) {
-      for(int u = 0; u < n; ++u) {
-        par[i][u] = par[i - 1][par[i - 1][u]]; 
+    dfs(root, -1);
+    for(int j = 1; j < lgn; ++j) {
+      for(int u = 0; u < n; ++u) if(par[j - 1][u] != -1) {
+        par[j][u] = par[j - 1][par[j - 1][u]]; 
       }
     }
   }
+
+  void dfs(int u, int p) {
+    for(int v : g[u]) if(v != p) {
+      par[0][v] = u;
+      depth[v] = depth[u] + 1;
+      dfs(v, u);
+    }
+  }
+
   int lca(int u, int v) {
-    if(lev[u] < lev[v]) {
-      swap(u, v);
+    if(depth[u] < depth[v]) swap(u, v);
+    for(int msk = depth[u] - depth[v], j = 0; msk; msk >>= 1, ++j) if(msk & 1) {
+      u = par[j][u];
     }
-    for(int msk = lev[u] - lev[v], i = 0; msk; msk >>= 1, ++i) {
-      if(msk & 1) {
-        u = par[i][u];
-      }
-    }
-    if(u == v) {
-      return u;
-    }
-    for(int i = lgn - 1; i >= 0; --i) {
-      if(par[i][u] != par[i][v]) {
-        u = par[i][u];
-        v = par[i][v];
-      }
+    if(u == v) return u;
+    for(int j = lgn - 1; j >= 0; --j) if(par[j][u] != par[j][v]) {
+      u = par[j][u];
+      v = par[j][v];
     }
     return par[0][u];
   }
-  int dist(int u, int v) {
-    return lev[u] + lev[v] - 2 * lev[lca(u, v)];
+
+  int kth_parent(int u, int k) {
+    for(int i = 0; k; k >>= 1, ++i) if(k & 1) {
+      u = par[i][u];
+    }
+    return u;
   }
+
+  int dist(int u, int v) {
+    return depth[u] + depth[v] - 2 * depth[lca(u, v)];
+  }
+
   vector<int> path(int u, int v) {
     vector<int> p;
     int w = lca(u, v);
