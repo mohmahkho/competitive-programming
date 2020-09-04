@@ -15,7 +15,8 @@ struct LCA {
     , depth(n)
   {
     assert(n > 0 && (int) edges.size() == n - 1);
-    for(auto [u, v] : edges) {
+    for(auto e : edges) {
+      int u = e.first, v = e.second;
       g[u].push_back(v);
       g[v].push_back(u);
     }
@@ -45,6 +46,10 @@ struct LCA {
       u = par[j][u];
       v = par[j][v];
     }
+    return par[0][u];
+  }
+
+  int parent(int u) {
     return par[0][u];
   }
 
