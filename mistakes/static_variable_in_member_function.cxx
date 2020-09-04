@@ -1,5 +1,6 @@
 /*
 Consider this example:
+*/
 
 struct s {
   void print() {
@@ -9,13 +10,14 @@ struct s {
   }
 };
 
--- main --
-s s1;
-s1.print();
-s s2;
-s2.print();
+int main() {
+  s s1;
+  s1.print();
+  s s2;
+  s2.print();
+}
 
-
+/*
 Output:
 1
 2
