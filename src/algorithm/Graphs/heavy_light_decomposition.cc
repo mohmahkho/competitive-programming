@@ -2,6 +2,7 @@ struct HLD : public LCA {
   vector<int> heavy;
   vector<int> top;
   vector<int> idx;
+  int idx_cnt = 0;
 
   HLD(int n_, const vector<pair<int, int>>& edges, int root_ = 0)
     : LCA(n_, edges, root_) 
@@ -27,7 +28,6 @@ struct HLD : public LCA {
   }
 
   void decompose(int u, int t) {
-    static int idx_cnt = 0;
     idx[u] = idx_cnt++;
     top[u] = t;
     if(heavy[u] != -1) {
@@ -54,7 +54,7 @@ struct HLD : public LCA {
     vector<pair<int, int>> res;
     add_path_decomposition(u, w, res);
     add_path_decomposition(v, w, res);
-    res.emplace_back(idx[w], idx[w]);
+    // res.emplace_back(idx[w], idx[w]);
     return res;
   }
 };
