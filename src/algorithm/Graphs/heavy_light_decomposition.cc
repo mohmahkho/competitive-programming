@@ -54,7 +54,7 @@ struct HLD : public LCA {
     vector<pair<int, int>> res;
     add_path_decomposition(u, w, res);
     add_path_decomposition(v, w, res);
-    // res.emplace_back(idx[w], idx[w]);
+    res.emplace_back(idx[w], idx[w]);
     return res;
   }
 };
