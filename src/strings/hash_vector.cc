@@ -1,3 +1,4 @@
+// Status: Just Compiled!! Not even tested on a single string!
 struct hash_vector {
   const int B; // Base
   const int M; // Mod
