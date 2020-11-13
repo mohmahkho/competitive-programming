@@ -1,4 +1,5 @@
 #include <bits/stdc++.h>
+using std::to_string;
 #define EVAL0(...) __VA_ARGS__
 #define EVAL1(...) EVAL0(EVAL0(EVAL0(__VA_ARGS__)))
 #define EVAL2(...) EVAL1(EVAL1(EVAL1(__VA_ARGS__)))
@@ -34,6 +35,11 @@
 #define dump(...) debug_print_(MAP_LIST(BOX, __VA_ARGS__))
 
 // usage : dump(a, b, c)
+template<typename T, typename U>
+std::string to_string(const std::pair<T, U>& p) {
+  return "(" + to_string(p.first) + ", " + to_string(p.second) + ")";
+}
+
 
 template<typename T>
 std::string to_string(const std::vector<T>& v) {
@@ -45,11 +51,6 @@ std::string to_string(const std::vector<T>& v) {
   return res;
 }
 
-
-template<typename T, typename U>
-std::string to_string(const std::pair<T, U>& p) {
-  return "(" + to_string(p.first) + ", " + to_string(p.secnod) + ")";
-}
 
 template<typename T>
 std::ostream& operator<<(std::ostream& os, const std::vector<T>& v) {
