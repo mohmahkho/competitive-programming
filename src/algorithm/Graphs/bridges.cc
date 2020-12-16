@@ -1,3 +1,4 @@
+#warning "This code may output a multiedge as a bridge"
 vector<pair<int, int>> bridges(vector<vector<int>>& g) {
   vector<int> num(g.size()), low(g.size()), vis(g.size());
   vector<pair<int, int>> br;
