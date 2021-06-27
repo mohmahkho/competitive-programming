@@ -1,5 +1,0 @@
-**Some Floors**  
-<img src="https://tex.s2cms.ru/svg/round(x)%20%3D%20%5Cleft%20%5Clfloor%7Bx%20%2B%200.5%7D%5Cright%20%5Crfloor" alt="round(x) = \left \lfloor{x + 0.5}\right \rfloor" />  
-<img src="https://tex.s2cms.ru/svg/%5Cleft%20%5Clceil%7B%5Cfrac%7Bn%7D%7Bd%7D%7D%5Cright%20%5Crceil%20%3D%20%5Cleft%20%5Clfloor%7B%5Cfrac%7Bn%20%2B%20d%20-%201%7D%7Bd%7D%7D%5Cright%20%5Crfloor" alt="\left \lceil{\frac{n}{d}}\right \rceil = \left \lfloor{\frac{n + d - 1}{d}}\right \rfloor" />  
-<img src="https://tex.s2cms.ru/svg/n%20%3D%20%5Csum_%7Bk%20%3D%200%7D%5E%7Bd%20-%201%7D%20%5Cleft%20%5Clfloor%7B%5Cfrac%7Bn%20%2B%20k%7D%7Bd%7D%7D%5Cright%20%5Crfloor" alt="n = \sum_{k = 0}^{d - 1} \left \lfloor{\frac{n + k}{d}}\right \rfloor" />  
-<img src="https://tex.s2cms.ru/svg/%5Cleft%20%5Clfloor%7B%5Cfrac%7Bn%7D%7Bab%7D%7D%5Cright%20%5Crfloor%20%3D%20%5Cleft%20%5Clfloor%7B%5Cfrac%7B%5Cleft%20%5Clfloor%7B%5Cfrac%7Bn%7D%7Ba%7D%7D%5Cright%20%5Crfloor%7D%7Bb%7D%7D%5Cright%20%5Crfloor" alt="\left \lfloor{\frac{n}{ab}}\right \rfloor = \left \lfloor{\frac{\left \lfloor{\frac{n}{a}}\right \rfloor}{b}}\right \rfloor" />
