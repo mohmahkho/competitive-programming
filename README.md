@@ -1,2 +1,9 @@
-# Competitive Programming Library
-Algorithms and competitvie programming are inseparable. In this repository I tried to maintain library of algorithms and data structures that are regularly used in competitive programming. I use C++ for competing, thus almost every code here is in C++. I tried to keep codes as simple as possible and make sure that they work properly. Some tips are included. Some mistakes that I made during solving problems are included (this is a personal list). Throughout the library, it is assumed that all C++ standard headers are included already, and no need to write std:: before standard library classes/functions.
+# MohMahKho's Competitive Programming Library
+In this repository I try to maintain a library of algorithms and data structures that are regularly used in competitive programming.
+
+### Requirements & Assumptions
+- It is assumed that all the standard library headers are included (```#include <bits/stdc++.h>```)
+- To be strict, source codes require c++-17 standard to compile (although in many cases lower standards suffice)
+- Some compiler specific functions may have been used (e.g. ```__builtin_popcount```). To avoid any hassle use ```g++```.
+
+More recent codes are stylistically different (e.g. no global variable or using more lambdas).
