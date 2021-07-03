@@ -4,7 +4,7 @@ In this repository I try to maintain a library of algorithms and data structures
 ### Requirements & Assumptions
 - It is assumed that all the standard library headers are included (```#include <bits/stdc++.h>```)
 - To be strict, source codes require c++-17 standard to compile (although in many cases lower standards suffice)
-- Some compiler specific functions may have been used (e.g. ```__builtin_popcount```). To avoid any hassle use ```g++```
+- Some compiler specific functions may have been used (e.g. ```__builtin_popcount```). To avoid any trouble use ```g++```
 - Most of the codes have been stress tested.
 
 More recent codes are stylistically different (e.g. no global variable or using more lambdas).
