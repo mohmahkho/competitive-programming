@@ -1,1 +1,1 @@
-Here are some tools to help you implement solutions easier!
+These are not algorithms. These are functions, classes, etc. that help you write your solutions easier.
