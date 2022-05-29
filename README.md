@@ -10,6 +10,4 @@ In this repository I try to maintain a library of algorithms and data structures
 More recent codes are stylistically different (e.g. no global variable or using more lambdas).
 
 Just testing:
-$$
-1 = \int_{-\infty}^{\infty} p_\xi(x)dx
-$$
+$1 = \int_{-\infty}^{\infty} p_\xi(x)dx$
