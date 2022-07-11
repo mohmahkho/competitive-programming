@@ -1,8 +1,8 @@
-auto is_bipartite(const vector<vector<int>>& g) -> bool {
+auto is_bipartite(const vector<vector<int>>& g) -> bool { // multiedge is ok
   int n = (int) g.size();
   vector<int> color(n, -1);
   bool bipartite_check = true;
-  auto dfs = [&] (const auto& self, int u, int c) {
+  auto dfs = [&] (const auto& self, int u, int c) -> void {
     color[u] = c;
     for(auto v : g[u]) {
       if(color[v] == -1) {
