@@ -72,7 +72,7 @@ struct LCA {
       u = par[0][u];
     }
     p.push_back(w);
-    int s = p.size();
+    int s = (int) p.size();
     while(v != w) {
       p.push_back(v);
       v = par[0][v];
