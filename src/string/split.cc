@@ -1,4 +1,4 @@
-vector<string> split(string& s, char sep) {
+vector<string> split(const string& s, char sep) {
   vector<string> res;
   string t {};
   for(char c : s) {
