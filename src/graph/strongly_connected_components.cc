@@ -50,7 +50,7 @@ struct strongly_connected_components {
     }
   }
 
-  vector<vector<int>> return_dag(bool reverse = false) {
+  vector<vector<int>> get_dag(bool reverse = false) {
     // Returns a dag with cc_cnt vertices
     // i -> j if i'th cc is connected to j'th cc
     // j -> i if reverse == true
